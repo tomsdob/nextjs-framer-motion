@@ -12,7 +12,7 @@ const Index = (props) => (
 
 Index.getInitialProps = async function () {
   const res = await fetch(
-    "http://my-json-server.typicode.com/wrongakram/demo/products"
+    "http://my-json-server.typicode.com/tomsdob/nextjs-framer-motion/blob/master/products"
   );
   const data = await res.json();
   return {
