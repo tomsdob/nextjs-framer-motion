@@ -1,18 +1,45 @@
 {
   "products": [
     {
-      "id": "ghost-whey-x-chips-ahoy",
-      "name": "Ghost Whey X Chips Ahoy",
-      "details": "We've said it before and we will say it again, nothing beats the real thing. With years of R&D and REAL CHIPS AHOY!® cookie pieces in every scoop, this flavor is second to none.",
-      "price": "$39.99",
-      "image": "https://cdn.shopify.com/s/files/1/2060/6331/products/image.png?v=1571331841"
+      "id": "1",
+      "name": "Mint CBD Oil 1000mg",
+      "price": "$139",
+      "details": [
+        "Sourced from USA-grown organic hemp",
+        "Extracted from non-GMO, pesticide-free, and herbicide-free plants",
+        "Manufactured without the use of chemical solvents",
+        "Cruelty free",
+        "Refundable (unopened) with a 30-day return policy"
+      ],
+      "image": "https://purekana.com/wp-content/uploads/2019/06/PureKana-CBD-Oil-Mint-1000mg.png"
     },
     {
-      "id": "ghost-whey-vegan",
-      "name": "GHOST® Vegan Protein",
-      "details": "GHOST Vegan Protein combines a premium, fully disclosed vegan protein blend with industry-leading flavors...what more could you ask for?",
-      "price": "$49.99",
-      "image": "https://cdn.shopify.com/s/files/1/2060/6331/products/Vegan.png?v=1574882358"
+      "id": "2",
+      "name": "Mint CBD Oil 600mg",
+      "price": "$92",
+      "details": [
+        "Made in the USA",
+        "Organic, Non-GMO",
+        "Full-spectrum blend of active cannabinoids",
+        "Free from pesticides, herbicides, solvents, and chemical fertilizers",
+        "Lab tested for CBD content",
+        "Less than 0.3% THC content"
+      ],
+      "image": "https://purekana.com/wp-content/uploads/2019/06/PureKana-CBD-Oil-Mint-600mg.png"
+    },
+    {
+      "id": "3",
+      "name": "Mint CBD Oil 300mg",
+      "price": "$54",
+      "details": [
+        "Made in the USA",
+        "Organic, Non-GMO",
+        "Full-spectrum blend of active cannabinoids",
+        "Free from pesticides, herbicides, solvents, and chemical fertilizers",
+        "Lab tested for CBD content",
+        "Less than 0.3% THC content"
+      ],
+      "image": "https://purekana.com/wp-content/uploads/2019/06/PureKana-CBD-Oil-Mint-300mg.png"
     }
   ],
   "profile": {

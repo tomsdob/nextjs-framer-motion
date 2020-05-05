@@ -4,7 +4,7 @@ const Index = (props) => (
   <div>
     <div>
       {props.products.map((product) => (
-        <span>{product.name}</span>
+        <span key={product.id}>{product.name}</span>
       ))}
     </div>
   </div>
@@ -12,7 +12,7 @@ const Index = (props) => (
 
 Index.getInitialProps = async function () {
   const res = await fetch(
-    "http://my-json-server.typicode.com/tomsdob/nextjs-framer-motion/"
+    "http://my-json-server.typicode.com/tomsdob/nextjs-framer-motion/products"
   );
   const data = await res.json();
   return {
