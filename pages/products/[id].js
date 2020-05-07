@@ -28,6 +28,7 @@ const Product = (props) => (
             {props.product.name}
           </h1>
           <ul className="mb-4">
+            if(product)
             {props.product.details.map((detail) => (
               <li
                 key={detail}
