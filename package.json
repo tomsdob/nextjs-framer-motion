@@ -5,9 +5,11 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
+    "export": "next export",
     "start": "next start"
   },
   "dependencies": {
+    "@svgr/webpack": "^5.4.0",
     "autoprefixer": "^9.7.6",
     "framer-motion": "^1.10.3",
     "isomorphic-unfetch": "^3.0.0",
@@ -16,5 +18,8 @@
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "tailwindcss": "^1.4.4"
+  },
+  "devDependencies": {
+    "file-loader": "^6.0.0"
   }
 }

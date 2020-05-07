@@ -1,19 +1,25 @@
 import Link from "next/link";
 import Head from "next/head";
 import fetch from "isomorphic-unfetch";
+import ArrowLeft from "../../assets/icons/arrow-left.svg";
 
 const Product = (props) => (
-  <div className="min-h-screen flex flex-col lg:flex-row justify-center items-center font-sans bg-gray-100">
+  <div className="min-h-screen flex flex-col lg:flex-row lg:justify-center lg:items-center font-sans bg-gray-100">
     <Head>
       <title>{props.product.name} | Shop</title>
     </Head>
     <div className="p-4 flex justify-center items-center bg-white w-full lg:w-1/2 h-auto lg:h-screen lg:fixed lg:top-0 lg:left-0">
-      <img src={props.product.image} className="max-h-full max-w-full" />
+      <img
+        alt={props.product.name}
+        src={props.product.image}
+        className="max-h-full max-w-full"
+      />
     </div>
     <div className="p-4 flex justify-center items-center w-full lg:w-1/2 h-full lg:ml-auto">
       <div className="flex flex-col text-left max-w-sm w-full h-auto">
         <Link href="/">
-          <span className="mb-12 text-base font-normal text-gray-800 leading-tight cursor-pointer transition-all duration-200 hover:text-gray-600">
+          <span className="mb-12 inline-flex justify-start items-center text-base font-normal text-gray-800 leading-tight cursor-pointer transition-all duration-200 hover:text-gray-600">
+            <ArrowLeft className="w-6 h-6 fill-current" />
             Back to products
           </span>
         </Link>
@@ -36,14 +42,14 @@ const Product = (props) => (
             <div className="inline-flex justify-center items-center">
               <button
                 disabled
-                className="p-1 flex justify-center items-center text-lg font-normal text-gray-800 leading-none w-8 h-8 bg-gray-300 border border-gray-300 rounded-full focus:outline-none focus:shadow-outline"
+                className="p-1 flex justify-center items-center text-lg font-bold text-gray-800 leading-none w-8 h-8 bg-gray-300 border border-gray-300 rounded-full focus:outline-none focus:shadow-outline"
               >
                 -
               </button>
               <span className="mx-2 text-lg font-bold text-gray-800 leading-none">
                 1
               </span>
-              <button className="p-1 flex justify-center items-center text-lg font-normal text-gray-800 leading-none w-8 h-8 bg-white border border-gray-800 rounded-full focus:outline-none focus:shadow-outline">
+              <button className="p-1 flex justify-center items-center text-lg font-bold text-gray-800 leading-none w-8 h-8 bg-white border border-gray-800 rounded-full focus:outline-none focus:shadow-outline">
                 +
               </button>
             </div>
