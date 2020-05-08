@@ -80,15 +80,15 @@ const Product = (props) => (
             <div className="inline-flex justify-center items-center">
               <button
                 disabled
-                className="p-1 flex justify-center items-center text-lg font-bold text-gray-800 leading-none w-8 h-8 rounded-full focus:outline-none focus:shadow-outline"
+                className="p-1 flex justify-center items-center text-lg font-bold text-gray-800 leading-none w-6 h-6 rounded-full focus:outline-none focus:shadow-outline"
               >
-                <Minus className="w-6 h-6" />
+                <Minus className="w-4 h-4" />
               </button>
               <span className="mx-2 text-lg font-bold text-gray-800 leading-none">
                 1
               </span>
-              <button className="p-1 flex justify-center items-center text-lg font-bold text-gray-800 leading-none w-8 h-8 rounded-full focus:outline-none focus:shadow-outline">
-                <Plus className="w-6 h-6" />
+              <button className="p-1 flex justify-center items-center text-lg font-bold text-gray-800 leading-none w-6 h-6 rounded-full focus:outline-none focus:shadow-outline">
+                <Plus className="w-4 h-4" />
               </button>
             </div>
             <span className="text-2xl font-bold text-gray-800 leading-none">
