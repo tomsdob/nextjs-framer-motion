@@ -6,6 +6,8 @@ import { fadeInUp, staggerFaster } from "../../assets/animations/animations";
 // Icons
 import ArrowLeft from "../../assets/icons/arrow-left.svg";
 
+let imageStatus = "done";
+
 const Product = (props) => (
   <motion.div
     initial="initial"
@@ -26,39 +28,49 @@ const Product = (props) => (
         className="max-h-full max-w-full"
       />
     </div>
-    <div className="p-4 flex justify-center items-center w-full lg:w-1/2 h-full lg:ml-auto">
+    <motion.div
+      variants={staggerFaster}
+      className="p-4 flex justify-center items-center w-full lg:w-1/2 h-full lg:ml-auto"
+    >
       <div className="flex flex-col text-left max-w-sm w-full h-auto">
         <Link href="/">
-          <motion.div
-            variants={fadeInUp}
-            className="mb-12 inline-flex justify-start items-center text-base font-normal text-gray-800 leading-tight cursor-pointer transition-all duration-200 hover:text-gray-600"
-          >
+          <div className="mb-12 inline-flex justify-start items-center text-base font-normal text-gray-800 leading-tight cursor-pointer transition-all duration-200 hover:text-gray-600">
             <ArrowLeft className="w-6 h-6 fill-current" />
             Back to products
-          </motion.div>
+          </div>
         </Link>
         <div>
-          <moh1 className="mb-4 text-2xl font-bold text-gray-800 leading-none">
+          <motion.h1
+            variants={fadeInUp}
+            className="mb-4 text-2xl font-bold text-gray-800 leading-none"
+          >
             {props.product.name}
-          </moh1>
+          </motion.h1>
           <ul className="mb-4">
             {Array.isArray(props.product.details) ? (
               props.product.details.map((detail) => (
-                <li
+                <motion.li
+                  variants={fadeInUp}
                   key={detail}
                   className="flex flex-row text-base font-light text-gray-800 leading-tight"
                 >
                   <span className="mr-2">-</span>
                   <p>{detail}</p>
-                </li>
+                </motion.li>
               ))
             ) : (
-              <span className="text-base font-light text-gray-800 leading-tight">
+              <motion.span
+                variants={fadeInUp}
+                className="text-base font-light text-gray-800 leading-tight"
+              >
                 No info could be retrieved!
-              </span>
+              </motion.span>
             )}
           </ul>
-          <div className="flex justify-between items-center">
+          <motion.div
+            variants={fadeInUp}
+            className="flex justify-between items-center"
+          >
             <div className="inline-flex justify-center items-center">
               <button
                 disabled
@@ -76,15 +88,18 @@ const Product = (props) => (
             <span className="text-2xl font-bold text-gray-800 leading-none">
               {props.product.price}
             </span>
-          </div>
+          </motion.div>
         </div>
-        <div className="mt-12 flex justify-between items-center">
+        <motion.div
+          variants={fadeInUp}
+          className="mt-12 flex justify-between items-center"
+        >
           <button className="px-6 py-4 text-base font-normal text-white leading-none bg-gray-800 hover:bg-gray-600 w-full lg:w-auto rounded-lg transition-all duration-200">
             Add to cart
           </button>
-        </div>
+        </motion.div>
       </div>
-    </div>
+    </motion.div>
   </motion.div>
 );
 
