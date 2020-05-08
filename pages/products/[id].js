@@ -5,6 +5,8 @@ import { motion } from "framer-motion";
 import { fadeInUp, staggerFaster } from "../../assets/animations/animations";
 // Icons
 import ArrowLeft from "../../assets/icons/arrow-left.svg";
+import Minus from "../../assets/icons/minus.svg";
+import Plus from "../../assets/icons/plus.svg";
 
 let imageStatus = "done";
 
@@ -35,7 +37,7 @@ const Product = (props) => (
       <div className="flex flex-col text-left max-w-sm w-full h-auto">
         <Link href="/">
           <div className="mb-12 inline-flex justify-start items-center text-base font-normal text-gray-800 leading-tight cursor-pointer transition-all duration-200 hover:text-gray-600">
-            <ArrowLeft className="w-6 h-6 fill-current" />
+            <ArrowLeft className="w-6 h-6" />
             Back to products
           </div>
         </Link>
@@ -74,15 +76,15 @@ const Product = (props) => (
             <div className="inline-flex justify-center items-center">
               <button
                 disabled
-                className="p-1 flex justify-center items-center text-lg font-bold text-gray-800 leading-none w-8 h-8 bg-gray-300 border border-gray-300 rounded-full focus:outline-none focus:shadow-outline"
+                className="p-1 flex justify-center items-center text-lg font-bold text-gray-800 leading-none w-8 h-8 rounded-full focus:outline-none focus:shadow-outline"
               >
-                -
+                <Minus className="w-6 h-6" />
               </button>
               <span className="mx-2 text-lg font-bold text-gray-800 leading-none">
                 1
               </span>
-              <button className="p-1 flex justify-center items-center text-lg font-bold text-gray-800 leading-none w-8 h-8 bg-white border border-gray-800 rounded-full focus:outline-none focus:shadow-outline">
-                +
+              <button className="p-1 flex justify-center items-center text-lg font-bold text-gray-800 leading-none w-8 h-8 rounded-full focus:outline-none focus:shadow-outline">
+                <Plus className="w-6 h-6" />
               </button>
             </div>
             <span className="text-2xl font-bold text-gray-800 leading-none">
