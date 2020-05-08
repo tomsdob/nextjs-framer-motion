@@ -9,11 +9,14 @@ const Index = (props) => (
     initial="initial"
     animate="animate"
     exit={{ opacity: 0 }}
-    className="px-4 md:px-0 w-screen min-h-screen flex justify-center items-center font-sans bg-gray-100"
+    className="p-4 md:px-0 w-screen min-h-screen flex flex-col md:justify-center md:items-center font-sans bg-gray-200"
   >
     <Head>
       <title>Products | Shop</title>
     </Head>
+    <h1 className="mb-4 text-3xl font-bold text-gray-800 leading-none text-center">
+      Products
+    </h1>
     <motion.div
       variants={staggerFast}
       className="md:-mx-2 flex flex-col md:flex-row w-full max-w-screen-lg"
@@ -28,9 +31,9 @@ const Index = (props) => (
             whileHover={{ scale: 1.05 }}
             whileTap={{ scale: 0.95 }}
             variants={fadeInUp}
-            className="md:mx-2 my-2 md:my-0 p-4 flex flex-col justify-start items-center text-left w-full md:w-1/3 max-w-full bg-white rounded-lg shadow-md cursor-pointer"
+            className="md:mx-2 my-2 md:my-0 flex flex-col justify-start items-center text-left w-full md:w-1/3 max-w-full bg-white rounded-lg border cursor-pointer"
           >
-            <div className="h-32">
+            <div className="p-4 flex justify-center items-center bg-gray-100 rounded-t w-full h-64">
               <motion.img
                 initial={{ x: 60, opacity: 0 }}
                 animate={{ x: 0, opacity: 1 }}
@@ -39,7 +42,7 @@ const Index = (props) => (
                 className="max-h-full max-w-full"
               />
             </div>
-            <div className="mt-4 w-full">
+            <div className="p-4 w-full">
               <span className="mb-4 block text-xl font-medium text-gray-800 leading-tight">
                 {product.name}
               </span>
