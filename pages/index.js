@@ -1,22 +1,41 @@
 import Link from "next/link";
 import Head from "next/head";
 import fetch from "isomorphic-unfetch";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerFast } from "../assets/animations/animations";
 
 const Index = (props) => (
-  <div className="w-screen min-h-screen flex justify-center items-center font-sans bg-gray-100">
+  <motion.div
+    initial="initial"
+    animate="animate"
+    exit={{ opacity: 0 }}
+    className="w-screen min-h-screen flex justify-center items-center font-sans bg-gray-100"
+  >
     <Head>
       <title>Products | Shop</title>
     </Head>
-    <div className="-mx-2 flex flex-col md:flex-row w-full max-w-screen-lg">
+    <motion.div
+      variants={staggerFast}
+      className="-mx-2 flex flex-col md:flex-row w-full max-w-screen-lg"
+    >
       {props.products.map((product) => (
         <Link
           key={product.id}
           href="/products/[id]"
           as={`/products/${product.id}`}
         >
-          <div className="mx-2 my-2 md:my-0 p-4 flex flex-col justify-start items-center text-left w-full md:w-1/3 bg-white rounded-lg shadow-md cursor-pointer">
+          <motion.div
+            variants={fadeInUp}
+            className="mx-2 my-2 md:my-0 p-4 flex flex-col justify-start items-center text-left w-full md:w-1/3 bg-white rounded-lg shadow-md cursor-pointer"
+          >
             <div className="h-32">
-              <img src={product.image} className="max-h-full max-w-full" />
+              <motion.img
+                initial={{ x: 60, opacity: 0 }}
+                animate={{ x: 0, opacity: 1 }}
+                transiton={{ delay: 0.2 }}
+                src={product.image}
+                className="max-h-full max-w-full"
+              />
             </div>
             <div className="mt-4 w-full">
               <span className="mb-4 block text-xl font-medium text-gray-800 leading-tight">
@@ -26,11 +45,11 @@ const Index = (props) => (
                 {product.price}
               </span>
             </div>
-          </div>
+          </motion.div>
         </Link>
       ))}
-    </div>
-  </div>
+    </motion.div>
+  </motion.div>
 );
 
 Index.getInitialProps = async function () {

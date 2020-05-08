@@ -1,15 +1,26 @@
 import Link from "next/link";
 import Head from "next/head";
 import fetch from "isomorphic-unfetch";
+import { motion } from "framer-motion";
+import { fadeInUp, staggerFaster } from "../../assets/animations/animations";
+// Icons
 import ArrowLeft from "../../assets/icons/arrow-left.svg";
 
 const Product = (props) => (
-  <div className="min-h-screen flex flex-col lg:flex-row lg:justify-center lg:items-center font-sans bg-gray-100">
+  <motion.div
+    initial="initial"
+    animate="animate"
+    exit={{ opacity: 0 }}
+    className="min-h-screen flex flex-col lg:flex-row lg:justify-center lg:items-center font-sans bg-gray-100"
+  >
     <Head>
       <title>{props.product.name} | Shop</title>
     </Head>
     <div className="p-4 flex justify-center items-center bg-white w-full lg:w-1/2 h-auto lg:h-screen lg:fixed lg:top-0 lg:left-0">
-      <img
+      <motion.img
+        initial={{ x: 200, opacity: 0 }}
+        animate={{ x: 0, opacity: 1 }}
+        transition={{ delay: 0.2 }}
         alt={props.product.name}
         src={props.product.image}
         className="max-h-full max-w-full"
@@ -18,15 +29,18 @@ const Product = (props) => (
     <div className="p-4 flex justify-center items-center w-full lg:w-1/2 h-full lg:ml-auto">
       <div className="flex flex-col text-left max-w-sm w-full h-auto">
         <Link href="/">
-          <span className="mb-12 inline-flex justify-start items-center text-base font-normal text-gray-800 leading-tight cursor-pointer transition-all duration-200 hover:text-gray-600">
+          <motion.div
+            variants={fadeInUp}
+            className="mb-12 inline-flex justify-start items-center text-base font-normal text-gray-800 leading-tight cursor-pointer transition-all duration-200 hover:text-gray-600"
+          >
             <ArrowLeft className="w-6 h-6 fill-current" />
             Back to products
-          </span>
+          </motion.div>
         </Link>
         <div>
-          <h1 className="mb-4 text-2xl font-bold text-gray-800 leading-none">
+          <moh1 className="mb-4 text-2xl font-bold text-gray-800 leading-none">
             {props.product.name}
-          </h1>
+          </moh1>
           <ul className="mb-4">
             {Array.isArray(props.product.details) ? (
               props.product.details.map((detail) => (
@@ -71,7 +85,7 @@ const Product = (props) => (
         </div>
       </div>
     </div>
-  </div>
+  </motion.div>
 );
 
 Product.getInitialProps = async function (context) {
