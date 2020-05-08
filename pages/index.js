@@ -8,7 +8,6 @@ const Index = (props) => (
       <title>Products | Shop</title>
     </Head>
     <div className="-mx-2 flex flex-col md:flex-row w-full max-w-screen-lg">
-      if(products)
       {props.products.map((product) => (
         <Link
           key={product.id}

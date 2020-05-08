@@ -28,16 +28,21 @@ const Product = (props) => (
             {props.product.name}
           </h1>
           <ul className="mb-4">
-            if(product)
-            {props.product.details.map((detail) => (
-              <li
-                key={detail}
-                className="flex flex-row text-base font-light text-gray-800 leading-tight"
-              >
-                <span className="mr-2">-</span>
-                <p>{detail}</p>
-              </li>
-            ))}
+            {Array.isArray(props.product.details) ? (
+              props.product.details.map((detail) => (
+                <li
+                  key={detail}
+                  className="flex flex-row text-base font-light text-gray-800 leading-tight"
+                >
+                  <span className="mr-2">-</span>
+                  <p>{detail}</p>
+                </li>
+              ))
+            ) : (
+              <span className="text-base font-light text-gray-800 leading-tight">
+                No info could be retrieved!
+              </span>
+            )}
           </ul>
           <div className="flex justify-between items-center">
             <div className="inline-flex justify-center items-center">
