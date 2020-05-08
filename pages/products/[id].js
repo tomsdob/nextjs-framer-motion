@@ -20,7 +20,11 @@ const Product = (props) => (
     <Head>
       <title>{props.product.name} | Shop</title>
     </Head>
-    <div className="p-4 flex justify-center items-center bg-white w-full lg:w-1/2 h-auto lg:h-screen lg:fixed lg:top-0 lg:left-0">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      className="p-4 flex justify-center items-center bg-white w-full lg:w-1/2 h-auto lg:h-screen lg:fixed lg:top-0 lg:left-0"
+    >
       <motion.img
         initial={{ x: 200, opacity: 0 }}
         animate={{ x: 0, opacity: 1 }}
@@ -29,7 +33,7 @@ const Product = (props) => (
         src={props.product.image}
         className="max-h-full max-w-full"
       />
-    </div>
+    </motion.div>
     <motion.div
       variants={staggerFaster}
       className="p-4 flex justify-center items-center w-full lg:w-1/2 h-full lg:ml-auto"

@@ -25,6 +25,8 @@ const Index = (props) => (
           as={`/products/${product.id}`}
         >
           <motion.div
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
             variants={fadeInUp}
             className="mx-2 my-2 md:my-0 p-4 flex flex-col justify-start items-center text-left w-full md:w-1/3 bg-white rounded-lg shadow-md cursor-pointer"
           >
